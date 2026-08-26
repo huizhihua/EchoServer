@@ -8,7 +8,9 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
-				"${file}",
+				"${workspaceFolder}/main.cpp",
+				"${workspaceFolder}/environment/winsock.cpp",
+				"-lws2_32",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe"
 			],

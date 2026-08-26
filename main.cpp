@@ -7,11 +7,15 @@
 #include <mutex>
 #include <condition_variable>
 
+#include <winsock2.h>
 #include <windows.h>
 #include <ws2tcpip.h>
 
+#include "./environment/winsock.hpp"
+
 int main()
 {
-    
+    WinsockInitializer winsockInitializer;
+
     return 0;
 }
