@@ -11,11 +11,23 @@
 #include <windows.h>
 #include <ws2tcpip.h>
 
-#include "./environment/winsock.hpp"
+#include "./environment/winsockinitializer.hpp"
+#include "./TcpServer/tcpserver.hpp"
 
 int main()
 {
     WinsockInitializer winsockInitializer;
+
+    TcpServer echo_server;
+    echo_server.start("127.0.0.1", 9999);
+
+    std::string op;
+    while (std::cin >> op)
+    {
+        if (op == "exit")
+            break;
+        std::cout << "op: " << op << std::endl;
+    }
 
     return 0;
 }

@@ -9,8 +9,10 @@
 				"-fdiagnostics-color=always",
 				"-g",
 				"${workspaceFolder}/main.cpp",
-				"${workspaceFolder}/environment/winsock.cpp",
+				"${workspaceFolder}/environment/winsockinitializer.cpp",
+				"${workspaceFolder}/TcpServer/tcpserver.cpp",
 				"-lws2_32",
+				"-pthread",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe"
 			],
