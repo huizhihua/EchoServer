@@ -8,10 +8,7 @@ TcpServer::TcpServer()
 
 TcpServer::~TcpServer()
 {
-    if (_running)
-    {
-        stop();
-    }
+    stop();
 }
 
 bool TcpServer::start(const char *ip, unsigned short port,

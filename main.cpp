@@ -19,7 +19,7 @@ int main()
     WinsockInitializer winsockInitializer;
 
     TcpServer echo_server;
-    echo_server.start("127.0.0.1", 9999, [](const char *msg, unsigned int size)
+    echo_server.start("127.0.0.1", 9999, [](const char *msg, unsigned int size) -> std::string
                       { return std::string(msg, size); });
 
     std::string op;
