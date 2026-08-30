@@ -18,7 +18,8 @@ public:
     TcpServer();
     ~TcpServer();
 
-    bool start(const char *ip, unsigned short port);
+    bool start(const char *ip, unsigned short port,
+               std::function<std::string(const char *, unsigned int)> func);
     void stop();
 
 private:
@@ -59,6 +60,5 @@ private:
     unsigned int _threads_count{};
     std::vector<std::thread> _worker_threads{};
 
-    std::function<std::string(const char *)> _func = [](const char *msg)
-    { return msg; };
+    std::function<std::string(const char *, unsigned int)> _func = nullptr;
 };
